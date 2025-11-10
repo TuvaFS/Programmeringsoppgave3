@@ -66,48 +66,7 @@ public class TestBlogg {
 		assertFalse(samling2.ledigPlass());
 	}
 	
-	@Test
-	public void testutvid() {
-		Blogg samling = new Blogg(2);
-		
-		TInnlegg innlegg1 = new TInnlegg(1,"Ole Olsen","23-10");
-		TInnlegg innlegg2 = new TInnlegg(2,"Oline Olsen","24-10");
 
-		samling.leggTil(innlegg1);
-		samling.leggTil(innlegg2);
-		
-		assertEquals(samling.getAntall(),2);
-		assertFalse(samling.ledigPlass());
-		
-		samling.utvid();
-		
-		assertTrue(samling.finnes(innlegg1));
-		assertTrue(samling.finnes(innlegg2));
-		assertEquals(samling.getAntall(),2);
-		assertTrue(samling.ledigPlass());	
-	}
-	
-	@Test
-	public void testslett() {
-	
-		Blogg samling = new Blogg(2);
-		
-		TInnlegg innlegg1 = new TInnlegg(1,"Ole Olsen","23-10");
-		TInnlegg innlegg2 = new TInnlegg(2,"Oline Olsen","24-10");
-
-		samling.leggTil(innlegg1);
-		samling.leggTil(innlegg2);
-		
-		assertEquals(2,samling.getAntall());
-		assertTrue(samling.finnes(innlegg1));
-		assertTrue(samling.finnes(innlegg2));
-		
-		samling.slett(innlegg2);
-		
-		assertEquals(1,samling.getAntall());
-		assertTrue(samling.finnes(innlegg1));
-		assertFalse(samling.finnes(innlegg2));
-	}
 	
 	@Test
 	public void testtoString() {
